@@ -21,6 +21,6 @@ export const  DefaultLayout = ({children}) =>{
     >
       {children}
     </motion.main>
-    <footer className="py-2 pb-0 absolute h-full flex flex-col items-center justify-center w-14 left-0 top-0"><FootNote></FootNote></footer>
+    <footer className="absolute h-full flex flex-col items-center justify-center w-10 left-0 top-0"><FootNote></FootNote></footer>
     </>)
 }
