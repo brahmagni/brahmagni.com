@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.1",
-    "@lottiefiles/react-lottie-player": "^3.4.7",
     "animejs": "^3.2.1",
     "contentlayer": "^0.2.5",
     "framer-motion": "^6.3.3",
