@@ -1,20 +1,26 @@
 import Head from 'next/head'
 import { DefaultLayout } from '../components/layouts/DefaultLayout'
-import {CgWebsite} from 'react-icons/cg'
-import {AiOutlineAndroid} from 'react-icons/ai'
-import { BiServer } from 'react-icons/bi'
+import {CgBrowser} from 'react-icons/cg'
+import {IoChevronDownCircle, IoChevronForwardCircle} from 'react-icons/io5'
+import {AiOutlineApi} from 'react-icons/ai'
+import { BsChevronRight } from 'react-icons/bs'
+import { ImAndroid, ImCogs } from 'react-icons/im'
 import { Swiper, SwiperSlide } from "swiper/react";
-// import required modules
-import { Autoplay,FreeMode,EffectCoverflow } from "swiper";
+import { Autoplay,FreeMode,EffectCards,Thumbs,Navigation } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/free-mode";
-import "swiper/css/effect-coverflow";
+import "swiper/css/effect-cards";
+import "swiper/css/thumbs";
+import "swiper/css/navigation";
+
+import { useState,useRef } from 'react'
 
 
 export default function Home(){
+    const [thumbsSwiper, setThumbsSwiper] = useState(0);
 
     return (
         <>
@@ -24,77 +30,40 @@ export default function Home(){
         <DefaultLayout>
         <div className="mx-auto container rounded-3xl h-[88vh] shadow-2xl shadow-[#243b55a4] bg-gradient-to-r from-[#141E30] to-[#243B55]">
             <div className="flex flex-row gap-2 h-full w-full">
-                <div className="w-1/2 h-full">
-
+                <div className="w-1/2 h-full p-40">
+                    <span>
+                        We represent 
+                    </span>
+                    <br/>
+                    <span>
+                        Security
+                    </span>
+                    <div className="flex flex-row gap-2 items-center justify-around w-full">
+                            <button className='w-52 h-20 group bg-gradient-to-r flex-col from-[#f12711] duration-200 cursor-pointer to-[#f3be4c] hover:from-[#fdecea] hover:to-[#fceed0] rounded-2xl shadow-xl flex justify-center px-8'>
+                                    <h1 className="text-left mb-0 font-extrabold text-white group-hover:text-transparent text-3xl group-hover:bg-clip-text group-hover:bg-gradient-to-r from-[#f5af19] to-[#f12711] drop-shadow-lg group-hover:drop-shadow-[0_10px_10px_rgba(241,39,17,0.7)] duration-200">
+                                        Services
+                                    </h1>
+                                    <span className='text-left font-semibold text-sm text-white group-hover:text-gray-400'>
+                                        We Provide
+                                    </span>
+                            </button>
+                    </div>
                 </div>
-                <div className="w-1/2 h-full flex items-center gap-2 justify-center">
-                    <div className="w-1/3 h-full">
-                        <div>Services</div>
-                    <Swiper
-                    direction={"vertical"}
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                      }}
-                    effect={"coverflow"}
-                    loop={true}
-                    speed={500}
-                    slidesPerView={3}
-                    centeredSlides={true}
-                    spaceBetween={34}
-                    freeMode={true}
-                    coverflowEffect={{
-                        rotate: 50,
-                        stretch: 0,
-                        depth: 100,
-                        modifier: 1,
-                        slideShadows: true,
-                      }}
-                    className="h-[95%] w-full mySwiper"
-                    modules={[Autoplay,FreeMode,EffectCoverflow]}
-                    >
-                        <SwiperSlide className='h-fit border'>Slide 1</SwiperSlide>
-                        <SwiperSlide className='h-fit border'>Slide 2</SwiperSlide>
-                        <SwiperSlide className='h-fit border'>Slide 3</SwiperSlide>
-                        <SwiperSlide className='h-fit border'>Slide 4</SwiperSlide>
-                        <SwiperSlide className='h-fit border'>Slide 5</SwiperSlide>
-                        <SwiperSlide className='h-fit border'>Slide 6</SwiperSlide>
-                        <SwiperSlide className='h-fit border'>Slide 7</SwiperSlide>
-                        <SwiperSlide className='h-fit border'>Slide 8</SwiperSlide>
-                        <SwiperSlide className='h-fit border'>Slide 9</SwiperSlide>
-                    </Swiper>
+                <div  className="w-1/2 h-full p-40">
+                    <div className="flex flex-row relative">
+                        <div className="bg-[#141E30] w-16 z-10 h-28 mt-6 rounded-lg p-1">block 1</div>
+                        <div className="w-52 h-[1px] top-20 z-0 absolute bg-white"></div>
+                        <div className="bg-[#141E30] z-10 w-48 h-32 mt-2 rounded-lg p-2 ml-20">block 2</div>
+                        <div className="w-28 h-[1px] top-20 z-0 absolute bg-white right-0"></div>
+                        <div className="bg-[#141E30] z-10 w-24 h-32  rounded-lg p-2 absolute -right-10 mt-2">block 3</div>
                     </div>
-                    <div className="w-1/3 h-full bg-blue-50">
-                    <Swiper
-                    direction={"vertical"}
-                    className="h-full w-full"
-                    >
-                        <SwiperSlide>Slide 1</SwiperSlide>
-                        <SwiperSlide>Slide 2</SwiperSlide>
-                        <SwiperSlide>Slide 3</SwiperSlide>
-                        <SwiperSlide>Slide 4</SwiperSlide>
-                        <SwiperSlide>Slide 5</SwiperSlide>
-                        <SwiperSlide>Slide 6</SwiperSlide>
-                        <SwiperSlide>Slide 7</SwiperSlide>
-                        <SwiperSlide>Slide 8</SwiperSlide>
-                        <SwiperSlide>Slide 9</SwiperSlide>
-                    </Swiper>
+                    <div className="flex flex-row relative">
+                        <div className="w-2 h-28 border-r ml-5"></div>
+                        <div className="w-2 h-28 border-r ml-48"></div>
+                        <div className="w-2 h-28 border-r ml-auto"></div>
                     </div>
-                    <div className="w-1/3 h-full bg-gray-50">
-                    <Swiper
-                    direction={"vertical"}
-                    className="h-full w-full"
-                    >
-                        <SwiperSlide>Slide 1</SwiperSlide>
-                        <SwiperSlide>Slide 2</SwiperSlide>
-                        <SwiperSlide>Slide 3</SwiperSlide>
-                        <SwiperSlide>Slide 4</SwiperSlide>
-                        <SwiperSlide>Slide 5</SwiperSlide>
-                        <SwiperSlide>Slide 6</SwiperSlide>
-                        <SwiperSlide>Slide 7</SwiperSlide>
-                        <SwiperSlide>Slide 8</SwiperSlide>
-                        <SwiperSlide>Slide 9</SwiperSlide>
-                    </Swiper>
+                    <div className="bg-[#141E30] w-full h-20 ml-[0.8rem] rounded-xl p-2">
+                        APIs
                     </div>
                 </div>
             </div>
